@@ -49,7 +49,6 @@ class KeypointDet(nn.Module):
         window_size = 3
         padding_size = window_size//2
 
-        a = 20
         x = F.relu(x)
         max_per_sample = torch.max(x.view(b,-1), dim=1)[0]
         exp = torch.exp(x/max_per_sample.view(b,1,1,1))
